@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['localhost', 'damp-harbor-91802.herokuapp.com']
 
 INSTALLED_APPS = [
     'corsheaders',
+    'rest_framework',
     'music_api',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -93,8 +94,9 @@ DATABASES = {
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=600) 
+DATABASES['default'].update(db_from_env) 
+
 
 
 # Password validation
@@ -131,7 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
